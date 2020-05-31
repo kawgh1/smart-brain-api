@@ -14,6 +14,10 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+// this is being used because we don't have real hosting
+// this next line should NEVER be used in production
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 // Database Initialization
 const db = knex({
 	client: 'pg',
