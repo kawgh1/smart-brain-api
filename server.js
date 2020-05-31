@@ -18,15 +18,21 @@ const image = require('./controllers/image');
 const db = knex({
 	client: 'pg',
 	connection: {
-		// localhost
-		// host: '127.0.0.1',
-		// user: 'postgres',
-		// password: 'password',
-		// database: 'smartbrain'
-
 		connectionString: process.env.DATABASE_URL,
 		ssl: true,}
 });
+
+// localhost
+// const db = knex({
+// 	client: 'pg',
+// 	connection: {
+// 		// localhost
+// 		host: '127.0.0.1',
+// 		user: 'postgres',
+// 		password: 'password',
+// 		database: 'smartbrain'
+
+// });
 
 // console.log(db.select('*').from('users'));
 db.select('*').from('users').then(data => {
