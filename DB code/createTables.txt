@@ -1,0 +1,11 @@
+This code for use creating tables in CLI
+heroku pg:info
+heroku pg:psql
+
+\d to get status of tables
+\q to quit
+
+CREATE TABLE login (id serial PRIMARY KEY, hash varchar(100) NOT NULL, email text UNIQUE NOT NULL, datetime timestamp NOT NULL);
+
+
+CREATE TABLE users (id serial PRIMARY KEY, name VARCHAR(100), email text UNIQUE NOT NULL, entries BIGINT, joined TIMESTAMP NOT NULL);
